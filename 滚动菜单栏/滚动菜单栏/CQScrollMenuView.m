@@ -128,6 +128,7 @@
     }
     
     [UIView animateWithDuration:0.3 animations:^{
+        _lineView.width = sender.titleLabel.width;
         _lineView.centerX = sender.centerX;
     }];
     
