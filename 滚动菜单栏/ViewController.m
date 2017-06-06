@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "CQScrollMenuView.h"
+#import "UIView+frameAdjust.h"
 
-@interface ViewController ()
+@interface ViewController ()<CQScrollMenuViewDelegate>
 
 @end
 
@@ -17,12 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    CQScrollMenuView *menuView = [[CQScrollMenuView alloc]initWithFrame:CGRectMake(0, 90, self.view.width, 30)];
+    [self.view addSubview:menuView];
+    menuView.menuButtonClickedDelegate = self;
+    menuView.titleArray = @[@"button0",@"button1",@"button2",@"button3",@"button4",@"button5",@"button6",@"button7",@"button8",@"button9",@"button10",@"button11",@"button12"];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// 菜单按钮点击时回调
+- (void)scrollMenuView:(CQScrollMenuView *)scrollMenuView clickedButtonAtIndex:(NSInteger)index{
+    NSLog(@"点击了第%ld个按钮",index);
 }
 
 

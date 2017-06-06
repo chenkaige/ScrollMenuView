@@ -13,6 +13,8 @@
 		D95BB1241EE6939D008D5D68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95BB1221EE6939D008D5D68 /* Main.storyboard */; };
 		D95BB1261EE6939D008D5D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95BB1251EE6939D008D5D68 /* Assets.xcassets */; };
 		D95BB1291EE6939D008D5D68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95BB1271EE6939D008D5D68 /* LaunchScreen.storyboard */; };
+		D95BB1331EE693E7008D5D68 /* CQScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D95BB1321EE693E7008D5D68 /* CQScrollMenuView.m */; };
+		D95BB1361EE69409008D5D68 /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D95BB1351EE69409008D5D68 /* UIView+frameAdjust.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		D95BB1251EE6939D008D5D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D95BB1281EE6939D008D5D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D95BB12A1EE6939D008D5D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D95BB1311EE693E7008D5D68 /* CQScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQScrollMenuView.h; sourceTree = "<group>"; };
+		D95BB1321EE693E7008D5D68 /* CQScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQScrollMenuView.m; sourceTree = "<group>"; };
+		D95BB1341EE69409008D5D68 /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
+		D95BB1351EE69409008D5D68 /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		D95BB1181EE6939D008D5D68 /* 滚动菜单栏 */ = {
 			isa = PBXGroup;
 			children = (
+				D95BB1301EE693A8008D5D68 /* 滚动菜单栏 */,
 				D95BB11C1EE6939D008D5D68 /* AppDelegate.h */,
 				D95BB11D1EE6939D008D5D68 /* AppDelegate.m */,
 				D95BB11F1EE6939D008D5D68 /* ViewController.h */,
@@ -77,6 +84,17 @@
 				D95BB11A1EE6939D008D5D68 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D95BB1301EE693A8008D5D68 /* 滚动菜单栏 */ = {
+			isa = PBXGroup;
+			children = (
+				D95BB1311EE693E7008D5D68 /* CQScrollMenuView.h */,
+				D95BB1321EE693E7008D5D68 /* CQScrollMenuView.m */,
+				D95BB1341EE69409008D5D68 /* UIView+frameAdjust.h */,
+				D95BB1351EE69409008D5D68 /* UIView+frameAdjust.m */,
+			);
+			path = "滚动菜单栏";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95BB1331EE693E7008D5D68 /* CQScrollMenuView.m in Sources */,
 				D95BB1211EE6939D008D5D68 /* ViewController.m in Sources */,
+				D95BB1361EE69409008D5D68 /* UIView+frameAdjust.m in Sources */,
 				D95BB11E1EE6939D008D5D68 /* AppDelegate.m in Sources */,
 				D95BB11B1EE6939D008D5D68 /* main.m in Sources */,
 			);
