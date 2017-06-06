@@ -23,7 +23,7 @@
     CQScrollMenuView *menuView = [[CQScrollMenuView alloc]initWithFrame:CGRectMake(0, 90, self.view.width, 30)];
     [self.view addSubview:menuView];
     menuView.menuButtonClickedDelegate = self;
-    menuView.titleArray = @[@"button0",@"button1",@"button2",@"button3",@"button4",@"button5",@"button6",@"button7",@"button8",@"button9",@"button10",@"button11",@"button12"];
+    menuView.titleArray = @[@"button0",@"button1",@"button2",@"button3",@"button4",@"button5",@"button6",@"button7",@"button8",@"button9",@"button10",@"button11"];
 }
 
 // 菜单按钮点击时回调

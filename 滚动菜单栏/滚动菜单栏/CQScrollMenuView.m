@@ -115,20 +115,21 @@
         if (sender.x >= self.width / 2 && sender.centerX <= self.contentSize.width - self.width/2) {
             [UIView animateWithDuration:0.3 animations:^{
                 self.contentOffset = CGPointMake(sender.centerX - self.width / 2, 0);
-                _lineView.centerX = sender.centerX;
             }];
         }else if (sender.frame.origin.x < self.width / 2){
             [UIView animateWithDuration:0.3 animations:^{
                 self.contentOffset = CGPointMake(0, 0);
-                _lineView.centerX = sender.centerX;
             }];
         }else{
             [UIView animateWithDuration:0.3 animations:^{
                 self.contentOffset = CGPointMake(self.contentSize.width - self.width, 0);
-                _lineView.centerX = sender.centerX;
             }];
         }
     }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        _lineView.centerX = sender.centerX;
+    }];
     
     if ([self.menuButtonClickedDelegate respondsToSelector:@selector(scrollMenuView:clickedButtonAtIndex:)]) {
         [self.menuButtonClickedDelegate scrollMenuView:self clickedButtonAtIndex:(sender.tag - 100)];
