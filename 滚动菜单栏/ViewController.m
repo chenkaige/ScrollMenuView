@@ -94,11 +94,4 @@
     self.menuView.currentButtonIndex = section;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    // the real time of webView finish loading
-    if ([webView isFinishLoading] == YES) {
-        // do something you want
-    }
-}
-
 @end
