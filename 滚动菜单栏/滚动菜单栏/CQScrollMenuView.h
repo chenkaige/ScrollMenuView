@@ -18,8 +18,10 @@
 
 @interface CQScrollMenuView : UIScrollView
 
+@property (nonatomic,weak) id <CQScrollMenuViewDelegate> menuButtonClickedDelegate;
 /** 菜单标题数组 */
 @property (nonatomic,strong) NSArray *titleArray;
-@property (nonatomic,weak) id <CQScrollMenuViewDelegate> menuButtonClickedDelegate;
+/** 当前选择的按钮的index */
+@property (nonatomic,assign) NSInteger currentButtonIndex;
 
 @end

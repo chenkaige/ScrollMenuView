@@ -25,6 +25,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.showsHorizontalScrollIndicator = NO;
+        _currentButtonIndex = 0; // 默认当前选择的按钮是第一个
     }
     return self;
 }
@@ -91,6 +92,7 @@
                 if (i == 0) {
                     _lineView.width = button.titleLabel.width;
                     _lineView.centerX = button.centerX;
+                    _lineView.maxY = self.height;
                 }
                 i ++;
             }
@@ -108,7 +110,6 @@
         }
     }
     sender.selected = YES;
-    _lineView.maxY = self.height;
     
     // 将所点击的button移到中间
     if (_lastView.maxX > self.width) {
@@ -127,14 +128,54 @@
         }
     }
     
+    // 改变下横线的位置和宽度
     [UIView animateWithDuration:0.3 animations:^{
         _lineView.width = sender.titleLabel.width;
         _lineView.centerX = sender.centerX;
     }];
     
+    // 代理方执行方法
     if ([self.menuButtonClickedDelegate respondsToSelector:@selector(scrollMenuView:clickedButtonAtIndex:)]) {
         [self.menuButtonClickedDelegate scrollMenuView:self clickedButtonAtIndex:(sender.tag - 100)];
     }
+}
+
+#pragma mark - 赋值当前选择的按钮
+/** 赋值当前选择的按钮 */
+- (void)setCurrentButtonIndex:(NSInteger)currentButtonIndex{
+    _currentButtonIndex = currentButtonIndex;
+    
+    // 改变按钮的选中状态
+    UIButton *currentButton = [self viewWithTag:(100 + currentButtonIndex)];
+    for (UIButton *button in self.subviews) {
+        if ([button isMemberOfClass:[UIButton class]]) {
+            button.selected = NO;
+        }
+    }
+    currentButton.selected = YES;
+    
+    // 将所点击的button移到中间
+    if (_lastView.maxX > self.width) {
+        if (currentButton.x >= self.width / 2 && currentButton.centerX <= self.contentSize.width - self.width/2) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.contentOffset = CGPointMake(currentButton.centerX - self.width / 2, 0);
+            }];
+        }else if (currentButton.x < self.width / 2){
+            [UIView animateWithDuration:0.3 animations:^{
+                self.contentOffset = CGPointMake(0, 0);
+            }];
+        }else{
+            [UIView animateWithDuration:0.3 animations:^{
+                self.contentOffset = CGPointMake(self.contentSize.width - self.width, 0);
+            }];
+        }
+    }
+    
+    // 改变下横线的宽度和位置
+    [UIView animateWithDuration:0.3 animations:^{
+        _lineView.width = currentButton.titleLabel.width;
+        _lineView.centerX = currentButton.centerX;
+    }];
 }
 
 @end
