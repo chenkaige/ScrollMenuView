@@ -64,6 +64,7 @@
         [menuButton sizeToFit];
         menuButton.height = self.height;
         
+        // 这句不能少，不然初始化时button的label的宽度为0
         [menuButton layoutIfNeeded];
         
         // 默认第一个按钮时选中状态

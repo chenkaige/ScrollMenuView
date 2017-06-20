@@ -11,7 +11,12 @@
 @class CQScrollMenuView;
 @protocol CQScrollMenuViewDelegate <NSObject>
 
-/** 菜单按钮点击时回调 */
+/**
+ 菜单按钮点击时回调
+
+ @param scrollMenuView 带单view
+ @param index 所点按钮的index
+ */
 - (void)scrollMenuView:(CQScrollMenuView *)scrollMenuView clickedButtonAtIndex:(NSInteger)index;
 
 @end
